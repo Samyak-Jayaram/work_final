@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const remediesSection = document.getElementById("remedies");
     const remediesList = document.getElementById("remedies-list");
 
-
-  
-
     const remediesData = {
         cold: [
     {
@@ -30,10 +27,9 @@ cough: [
     },
     {
         name: "Trikonasana",
-        description: "Looking straight ahead and comfortably spaced apart on a level surface.Your right foot should now be facing outside with the heel pointed inward.The heels ought to be parallel to one another.Take a deep breath in and bend your torso to the right at the hip while straightening your left arm While you wait, you can put your right hand anywhere you feel comfortable, such as your ankle, shin, or even the mat.You can look up at your left palm if it's comfortable for you while keeping your head in line with your torso.Allow the body to unwind a little bit more with each breath and repeat 10 times each side."
+        description: "Trikonasana (Triangle Pose) can help relieve cough by promoting lung expansion and improving respiratory function. The lateral stretching and deep breathing involved in the pose can help clear congestion and enhance the flow of air, aiding in the removal of irritants from the respiratory system. "
+
     },
-
-
     {
         name: "Ginger Tea",
         description: "Prepare ginger tea by boiling sliced ginger in water. Add honey and lemon for extra flavor. Ginger has anti-inflammatory properties that can help ease cough and congestion."
@@ -57,7 +53,6 @@ fever: [
 ],
        
     };
-
 
 
     getRemediesButton.addEventListener("click", function() {

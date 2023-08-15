@@ -5,6 +5,11 @@ body {
     background-color: #f0f0f0;
 }
 
+#sleep-cycle-info
+{
+    text-align: justify;
+}
+
 header {
     background-color: #333;
     color: #fff;
@@ -101,7 +106,7 @@ nav a {
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 30px;
 }
 
@@ -180,6 +185,34 @@ nav a {
     }
 
 
+    
+    .btn {
+        display: inline-block;
+        background-color: #1ec5e5;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        }
+    
+        .btn:hover {
+        background-color: #0099cc;
+        }
+    
+    
+    
+    
+        .hero {
+        background-image: url('home.jpg');
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        padding: 100px 0;
+        }
+
+
     @media screen and (max-width: 768px) {
     nav ul {
     flex-direction: column;
@@ -204,31 +237,6 @@ nav a {
     }
 
 
-    .btn {
-    display: inline-block;
-    background-color: #1ec5e5;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    }
-
-    .btn:hover {
-    background-color: #0099cc;
-    }
-
-
-
-
-    .hero {
-    background-image: url('home.jpg');
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
-    }
 
 
 

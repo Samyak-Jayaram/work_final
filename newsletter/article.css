@@ -19,20 +19,26 @@ header {
     margin-bottom: 20px;
     text-align: justify;
 }
-.article h2 {
-    color: #333;
-}
 .article p {
-    color: #666;
+    color: #000000;
 }
 .article img {
     max-width: 100%;
     margin-bottom: 10px;
     text-align: justify;
 }
-footer {
-    background: #333;
+
+
+.btn {
+    display: inline-block;
+    background-color: #1ec5e5;
     color: #fff;
-    text-align: center;
-    padding: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #198dbb;
 }

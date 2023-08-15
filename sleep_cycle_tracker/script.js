@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function()
     const trackButton = document.getElementById("track-button");
     const sleepCycleInfoText = document.getElementById("sleep-cycle-info"); 
 
-    function calculateSleepDuration(sleepTime, wakeTime) {
+    function calculateSleepDuration(sleepTime, wakeTime) 
+    {
     const sleepTimeParts = sleepTime.split(":");
     const wakeTimeParts = wakeTime.split(":");
 
@@ -28,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function()
     return { hours, minutes };
     }
 
-    function calculateSleepCycle(sleepHours, sleepMinutes) {
+    function calculateSleepCycle(sleepHours, sleepMinutes) 
+    {
     const sleepTotalMinutes = sleepHours * 60 + sleepMinutes;
     const numCycles = Math.floor(sleepTotalMinutes / 90);
     const cycleStage = getCycleStage(numCycles);
@@ -36,23 +38,45 @@ document.addEventListener("DOMContentLoaded", function()
     return `You completed ${numCycles} sleep cycles. You woke up during the ${cycleStage} stage.`;
     }
 
-    function getCycleStage(numCycles) {
-    const stages = ['light', 'deep', 'REM'];
-    return stages[numCycles % stages.length];
+    function getCycleStage(numCycles, sleepTotalMinutes) {
+        const stages = ['light', 'deep', 'REM'];
+        let stage;
+    
+        if (sleepTotalMinutes >= 0 && sleepTotalMinutes <= 24) 
+        {
+            stage=stages[0];
+        } 
+        else if (sleepTotalMinutes <= 90 * numCycles) 
+        {
+            stage=stages[1];
+        } 
+        else {
+            const remSleepMinutes = 90 * numCycles + 10 * Math.min(numCycles, 6);
+            if (sleepTotalMinutes === remSleepMinutes) 
+            {
+                stage=stages[2];
+            } 
+            else 
+            {
+                stage=stages[1];
+            }
+        }
+
+        return stage;
     }
 
-        function calculateSleepCycleInfo(numCycles, sleepHours, sleepMinutes) {
-            const stages = ['light', 'deep', 'REM'];
-            const cycleStage = stages[numCycles % stages.length];
+        function calculateSleepCycleInfo(numCycles) 
+        {
+            const cycleStage = getCycleStage(numCycles);
             
             let cycleInfo = "";
 
             if (cycleStage === 'light') {
-                cycleInfo = "During light sleep, your body is transitioning from wakefulness to deeper sleep stages. Memory consolidation and overall restoration take place.";
+                cycleInfo = "Light sleep is the initial phase when you're transitioning from wakefulness to slumber. During this stage, muscle activity slows down, and your heart rate and breathing become more regular. It's easy to wake up from light sleep, and it typically constitutes about 5-10% of your total sleep cycle.Memory consolidation and overall restoration take place.";
             } else if (cycleStage === 'deep') {
-                cycleInfo = "Deep sleep is the most restorative stage. Growth hormone is released, promoting tissue repair and growth. Physical recovery, immune system function, and overall well-being occur during this stage.";
+                cycleInfo = " It is a period of profound rest. This stage is essential for physical restoration, as it contributes to muscle repair, immune system support, and overall growth. It is characterized by slow brain waves, and waking up from this stage might lead to grogginess. It usually accounts for around 10-25% of your sleep cycle.";
             } else if (cycleStage === 'REM') {
-                cycleInfo = "During REM sleep, vivid dreaming and cognitive processing take place. This stage is important for emotional regulation, memory consolidation, and creative problem-solving.";
+                cycleInfo = "REM sleep is a stage marked by rapid and random eye movements, along with heightened brain activity similar to wakefulness. It's the phase where most vivid dreams occur. It plays a role in memory consolidation, learning, and emotional processing. This stage becomes longer as the night progresses and makes up about 20-25% of your sleep cycle.This stage is important for emotional regulation, memory consolidation, and creative problem-solving.";
             }
 
             return cycleInfo;
