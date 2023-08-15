@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 ],
 
-cough: [
+        cough: [
     {
         name: "Honey and lemon mixture",
         description: " Mix a tablespoon of honey with freshly squeezed lemon juice. Consume this mixture to soothe your throat and reduce coughing."
@@ -36,7 +36,7 @@ cough: [
     }
 ],
 
-fever: [
+        fever: [
     {
         name: "Stay Hydrated",
         description: "Drinking plenty of fluids, such as water, herbal teas, and clear soups, helps keep your body hydrated and aids in reducing fever."
@@ -55,31 +55,26 @@ fever: [
     };
 
 
-    getRemediesButton.addEventListener("click", function() {
-const selectedAilment = ailmentSelect.value;
-const selectedRemedies = remediesData[selectedAilment];
-
-const ailmentIcon = categoryIcons[selectedAilment];
-
-
-const previousIcon = document.querySelector(".category-icon");
-if (previousIcon) {
-previousIcon.remove();
-}
+getRemediesButton.addEventListener("click", function() 
+{
+        const selectedAilment = ailmentSelect.value;
+        const selectedRemedies = remediesData[selectedAilment];
+        const ailmentIcon = categoryIcons[selectedAilment];
 
 
-remediesList.innerHTML = selectedRemedies.map(remedy => `<p>${remedy}</p>`).join("");
-            remediesSection.style.display = "block";
-
-  
-            remediesList.insertAdjacentHTML('beforebegin', `<h2 class="${ailmentIcon}"> Remedies</h2>`);
-
-
-
-if (selectedRemedies) {
+        const previousIcon = document.querySelector(".category-icon");
+        if (previousIcon) 
+        {
+        previousIcon.remove();
+        }
 
 
+        remediesList.innerHTML = selectedRemedies.map(remedy => `<p>${remedy}</p>`).join("");
+        remediesSection.style.display = "block";
+        remediesList.insertAdjacentHTML('beforebegin', `<h2 class="${ailmentIcon}"> Remedies</h2>`);
 
+if (selectedRemedies) 
+{
 const remediesHTML = selectedRemedies.map((remedy, index) => `
     <div class="remedy">
         <h3>${remedy.name}</h3>

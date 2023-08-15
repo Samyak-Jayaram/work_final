@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function()
         return stage;
     }
 
-        function calculateSleepCycleInfo(numCycles) 
+    function calculateSleepCycleInfo(numCycles) 
         {
             const cycleStage = getCycleStage(numCycles);
             

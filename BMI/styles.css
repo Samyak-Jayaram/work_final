@@ -7,7 +7,6 @@
     font-family: 'Poppins', sans-serif;    
     }
 
-
 .logo
 {
   background: rgba(165, 234, 169, 0.9);
@@ -200,9 +199,6 @@ button {
   font-family: "Nunito", sans-serif;
 }
 
-
-
-
 .height
 {
   background: #4f7df9;
@@ -230,10 +226,6 @@ button {
   font-family: "Nunito", sans-serif;
 }
 
-
-
-
-
 .weight
 {
   background: #4f7df9;
@@ -260,10 +252,6 @@ button {
   font-size: 28px;
   font-family: "Nunito", sans-serif;
 }
-
-
-
-
 
 @media (max-width: 700px)
 {
