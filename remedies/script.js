@@ -83,7 +83,7 @@ if (selectedRemedies) {
 const remediesHTML = selectedRemedies.map((remedy, index) => `
     <div class="remedy">
         <h3>${remedy.name}</h3>
-        <img src="images1/${selectedAilment}${index}.jpg" alt="${selectedAilment}" class="remedy-image">
+        <img src="images/${selectedAilment}${index}.webp" alt="${selectedAilment}" class="remedy-image">
         <div class="remedy-description">
             <p>${remedy.description}</p>
         </div>
